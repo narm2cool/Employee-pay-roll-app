@@ -1,0 +1,89 @@
+
+mysql> show tables;
++---------------------+
+| Tables_in_fsdp      |
++---------------------+
+| emp_empattendance   |
+| emp_empsalary       |
+| emp_empschedule     |
+| employee            |
+| employee_attendance |
+| employee_salary     |
+| employee_schedule   |
+| hibernate_sequence  |
++---------------------+
+8 rows in set (0.04 sec)
+
+mysql> desc employee;
++-------------+--------------+------+-----+---------+-------+
+| Field       | Type         | Null | Key | Default | Extra |
++-------------+--------------+------+-----+---------+-------+
+| eid         | bigint       | NO   | PRI | NULL    |       |
+| dob         | varchar(255) | YES  |     | NULL    |       |
+| address     | varchar(255) | YES  |     | NULL    |       |
+| designation | varchar(255) | YES  |     | NULL    |       |
+| email       | varchar(255) | YES  | UNI | NULL    |       |
+| gender      | varchar(255) | YES  |     | NULL    |       |
+| name        | varchar(255) | YES  |     | NULL    |       |
+| passwd      | varchar(255) | YES  |     | NULL    |       |
+| phone       | varchar(255) | YES  |     | NULL    |       |
++-------------+--------------+------+-----+---------+-------+
+9 rows in set (0.11 sec)
+
+mysql> desc employee_salary;
++--------+--------------+------+-----+---------+-------+
+| Field  | Type         | Null | Key | Default | Extra |
++--------+--------------+------+-----+---------+-------+
+| sid    | bigint       | NO   | PRI | NULL    |       |
+| month  | varchar(255) | YES  |     | NULL    |       |
+| salary | bigint       | YES  |     | NULL    |       |
++--------+--------------+------+-----+---------+-------+
+3 rows in set (0.00 sec)
+
+mysql> desc emp_empsalary;
++-------+--------+------+-----+---------+-------+
+| Field | Type   | Null | Key | Default | Extra |
++-------+--------+------+-----+---------+-------+
+| eid   | bigint | NO   | PRI | NULL    |       |
+| sid   | bigint | NO   | PRI | NULL    |       |
++-------+--------+------+-----+---------+-------+
+2 rows in set (0.00 sec)
+
+mysql> desc employee_attendance;
++--------+--------------+------+-----+---------+-------+
+| Field  | Type         | Null | Key | Default | Extra |
++--------+--------------+------+-----+---------+-------+
+| aid    | bigint       | NO   | PRI | NULL    |       |
+| date   | varchar(255) | YES  |     | NULL    |       |
+| status | varchar(255) | NO   |     | NULL    |       |
++--------+--------------+------+-----+---------+-------+
+3 rows in set (0.00 sec)
+
+mysql> desc emp_empattendance;
++-------+--------+------+-----+---------+-------+
+| Field | Type   | Null | Key | Default | Extra |
++-------+--------+------+-----+---------+-------+
+| eid   | bigint | NO   | PRI | NULL    |       |
+| aid   | bigint | NO   | PRI | NULL    |       |
++-------+--------+------+-----+---------+-------+
+2 rows in set (0.00 sec)
+
+mysql> desc employee_schedule;
++----------+--------------+------+-----+---------+-------+
+| Field    | Type         | Null | Key | Default | Extra |
++----------+--------------+------+-----+---------+-------+
+| schd_id  | bigint       | NO   | PRI | NULL    |       |
+| fromdate | varchar(255) | YES  |     | NULL    |       |
+| timeline | varchar(255) | YES  |     | NULL    |       |
+| todate   | varchar(255) | YES  |     | NULL    |       |
++----------+--------------+------+-----+---------+-------+
+4 rows in set (0.00 sec)
+
+mysql> desc emp_empschedule;
++---------+--------+------+-----+---------+-------+
+| Field   | Type   | Null | Key | Default | Extra |
++---------+--------+------+-----+---------+-------+
+| eid     | bigint | NO   | PRI | NULL    |       |
+| schd_id | bigint | NO   | PRI | NULL    |       |
++---------+--------+------+-----+---------+-------+
+2 rows in set (0.00 sec)
